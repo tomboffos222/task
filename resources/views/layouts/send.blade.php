@@ -12,7 +12,8 @@
     <meta property="og:title" content="@yield('title')" >
     <meta property="og:image" content="@yield('image')" >
 
-
+    <meta property="og:image:width" content="400" >
+    <meta property="og:image:height" content="400" >
     <meta property="og:description" content="@yield('description')" >
 
 </head>
