@@ -34,7 +34,7 @@ class LinkController extends Controller
         $data['url'] = route('Link',$id);
         $data['image'] = route('Links').$link['image'];
 
-        return view('link',$data);
+        return view('link',['link'=>$link,'image'=>$data['image']]);
     }
     public function CreateLink(Request $request){
         $rules = [
