@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 
 class LinkController extends Controller
@@ -23,6 +25,8 @@ class LinkController extends Controller
     public function Link($id){
         $links = session()->get('links');
         $link = $links[$id];
+        $data['route'] =Route::current();
+
         $data['link'] = $link;
         $data['title'] = $link['title'];
         $data['description'] = $link['description'];
