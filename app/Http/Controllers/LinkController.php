@@ -25,7 +25,7 @@ class LinkController extends Controller
     public function Link($id){
         $links = session()->get('links');
         $link = $links[$id];
-        $data['route'] =Route::current();
+        $data['route'] =url()->current();
 
         $data['link'] = $link;
         $data['title'] = $link['title'];
