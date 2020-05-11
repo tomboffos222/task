@@ -8,6 +8,8 @@
     <title>Document</title>
     <meta property="og:title" content="{{$link['title']}}" />
     <meta property="og:description" content="{{$link['description']}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{route('Link',$link['id'])}}" />
     <meta property="og:image" content="{{route('Links')}}{!! $link['image'] !!}" />
 </head>
 <body>
