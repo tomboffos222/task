@@ -23,6 +23,7 @@ class LinkController extends Controller
     public function Link($id){
         $links = session()->get('links');
         $link = $links[$id];
+        $data['link'] = $link;
         $data['title'] = $link['title'];
         $data['description'] = $link['description'];
         $data['id'] = $id;
