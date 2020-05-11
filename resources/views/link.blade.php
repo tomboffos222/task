@@ -16,7 +16,7 @@
 
 
 <script>
-    window.location.replace("{{$link['link']}}");
+    {{--window.location.replace("{{$link['link']}}");--}}
 
 </script>
 </body>
