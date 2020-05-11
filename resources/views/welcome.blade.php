@@ -93,8 +93,8 @@
                         @foreach($links as $link)
                             <div class="card w-100 p-3 flex-row justify-content-between">
 
-                                <a href="{{$link->route}}" id="link_{{$link->id}}">{{$link->route}}</a>
-                                <button onclick="copy({{$link->id}})" id="button_{{$link->id}}" class="btn btn-primary">Скопировать</button>
+                                <a href="{{$link['route']}}" id="link_{{$link['id']}}">{{$link['route']}}</a>
+                                <button onclick="copy({{$link['id']}})" id="button_{{$link['id']}}" class="btn btn-primary">Скопировать</button>
                             </div>
                         @endforeach
 
