@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
+use PhpParser\Node\Expr\Cast\Object_;
 
 class LinkController extends Controller
 {
@@ -59,25 +60,26 @@ class LinkController extends Controller
                 $imageName = time().Str::random(5).'.'.$image->getClientOriginalExtension();
                 $imagePath = public_path('/uploads');
                 $image->move($imagePath,$imageName);
-                $link['title'] = $request['title'];
-                $link['link'] = $request['link'];
-                $link['description'] = $request['description'];
-                $link['image'] = '/uploads/'.$imageName;
+                $link = new class{};
+                $link->title = $request['title'];
+                $link->link = $request['link'];
+                $link->description = $request['description'];
+                $link->image = route('Links').'/uploads/'.$imageName;
 
 
                 $links =  session()->get('links');
 
                 if ($links){
-                    $link['id'] =array_key_last($links)+1;
-                    $link['route'] = route('Link',$link['id']);
+                    $link->id =array_key_last($links)+1;
+                    $link->route = route('Link',$link['id']);
 
                     $links[] = $link;
                     session()->put('links',$links);
                     session()->save();
                 }else{
                     $links = [];
-                    $link['id'] = 0;
-                    $link['route'] = route('Link',0);
+                    $link->id = 0;
+                    $link->route = route('Link',0);
                     $links[] = $link;
                     session()->put('links',$links);
                     session()->save();
