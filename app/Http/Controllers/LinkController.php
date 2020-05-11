@@ -29,11 +29,10 @@ class LinkController extends Controller
         $data['route'] =url()->current();
 
         $data['link'] = $link;
-        $data['title'] = $link['title'];
-        $data['description'] = $link['description'];
+
         $data['id'] = $id;
-        $data['url'] = route('Link',$id);
-        $data['image'] = route('Links').$link['image'];
+
+
 
         return view('link',$data);
     }
