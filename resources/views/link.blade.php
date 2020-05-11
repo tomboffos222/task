@@ -13,7 +13,7 @@
 
 
     <meta property="og:description" content="{{$description}}" >
-    <meta property="og:url" content="{{$route}}">
+    <meta property="og:url" content="{{ Request::url() }}">
 
 </head>
 <body>
