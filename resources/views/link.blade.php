@@ -9,7 +9,7 @@ $image = route('Links').$link['image'];
 
 
 @endphp
-@section('title'){!! $title !!}@endsection
+@section('title'){!! $link !!}@endsection
 @section('description'){!! $description !!}@endsection
 @section('image'){!! $image !!}@endsection
 @section('link',$link['link'])
