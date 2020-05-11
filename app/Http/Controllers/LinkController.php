@@ -22,7 +22,13 @@ class LinkController extends Controller
     }
     public function Link($id){
         $links = session()->get('links');
-        $data['link'] = $links[$id];
+        $link = $links[$id];
+        $data['title'] = $link['title'];
+        $data['description'] = $link['description'];
+        $data['id'] = $id;
+        $data['url'] = route('Link',$id);
+        $data['image'] = route('Links').$link['image'];
+
         return view('link',$data);
     }
     public function CreateLink(Request $request){
