@@ -1,5 +1,5 @@
 @extends('layouts.send')
-@section('title',$title)
-@section('description',$description)
-@section('image',$image)
+@section('title'){!! $title !!}@endsection
+@section('description'){!! $description !!}@endsection
+@section('image'){!! $image !!}@endsection
 @section('link',$link['link'])
